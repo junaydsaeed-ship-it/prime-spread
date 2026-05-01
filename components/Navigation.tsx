@@ -16,10 +16,12 @@ const links = [
   { href: "/contact", label: "Contact" },
 ]
 
-const PillNav = ({ isHome, pathname }: { isHome: boolean; pathname: string }) => (
+const PillNav = ({ isHome, pathname, floating = false }: { isHome: boolean; pathname: string; floating?: boolean }) => (
   <div className={cn(
-    "flex items-center gap-1 rounded-full px-1.5 py-1.5 ring-1 backdrop-blur",
-    isHome ? "bg-white/5 ring-white/10" : "bg-[#1B2632]/6 ring-[#1B2632]/12"
+    "flex items-center gap-1 rounded-full px-1.5 py-1.5 ring-1 backdrop-blur-md",
+    floating
+      ? "bg-[#1B2632]/90 ring-white/10"
+      : isHome ? "bg-white/5 ring-white/10" : "bg-[#1B2632]/6 ring-[#1B2632]/12"
   )}>
     {links.map((link) => (
       <Link
@@ -27,9 +29,11 @@ const PillNav = ({ isHome, pathname }: { isHome: boolean; pathname: string }) =>
         href={link.href}
         className={cn(
           "px-5 py-2.5 text-base font-medium rounded-full transition-colors",
-          isHome
-            ? pathname === link.href ? "text-white" : "text-white/70 hover:text-white"
-            : pathname === link.href ? "text-[#1B2632]" : "text-[#1B2632]/60 hover:text-[#1B2632]"
+          floating
+            ? pathname === link.href ? "text-white" : "text-[#EEE9DF]/70 hover:text-white"
+            : isHome
+              ? pathname === link.href ? "text-white" : "text-white/70 hover:text-white"
+              : pathname === link.href ? "text-[#1B2632]" : "text-[#1B2632]/60 hover:text-[#1B2632]"
         )}
       >
         {link.label}
@@ -39,9 +43,11 @@ const PillNav = ({ isHome, pathname }: { isHome: boolean; pathname: string }) =>
       href="/contact"
       className={cn(
         "ml-1 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-medium transition-colors",
-        isHome
+        floating
           ? "bg-white text-neutral-900 hover:bg-white/90"
-          : "bg-[#1B2632] text-[#EEE9DF] hover:bg-[#1B2632]/85"
+          : isHome
+            ? "bg-white text-neutral-900 hover:bg-white/90"
+            : "bg-[#1B2632] text-[#EEE9DF] hover:bg-[#1B2632]/85"
       )}
     >
       Work With Us
@@ -123,7 +129,7 @@ export default function Navigation() {
             transition={{ duration: 0.35, ease: "easeInOut" }}
             className="fixed top-5 left-1/2 z-50 hidden md:flex -translate-x-1/2"
           >
-            <PillNav isHome={isHome} pathname={pathname} />
+            <PillNav isHome={isHome} pathname={pathname} floating />
           </motion.div>
         )}
       </AnimatePresence>
