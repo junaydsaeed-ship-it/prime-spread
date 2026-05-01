@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Globe, Share2, Mail } from "lucide-react"
 
 export default function Footer() {
@@ -7,7 +8,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div>
-            <span className="text-2xl font-bold text-[#FFB162]">Prime Spread</span>
+            <div className="flex items-center gap-3">
+              <Image
+                src="/prime-spread-logo.svg"
+                alt="Prime Spread"
+                width={48}
+                height={48}
+                className="shrink-0"
+              />
+              <span className="text-2xl font-bold text-[#FFB162]">Prime Spread</span>
+            </div>
             <p className="mt-4 text-[#C9C1B1] text-sm leading-relaxed max-w-xs">
               London&apos;s go-to influencer marketing agency for food brands and cooking creators.
             </p>

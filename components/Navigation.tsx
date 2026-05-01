@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
@@ -45,7 +46,15 @@ export default function Navigation() {
       <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", navBg)}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <Image
+              src="/prime-spread-logo.svg"
+              alt="Prime Spread"
+              width={36}
+              height={36}
+              className="shrink-0"
+              priority
+            />
             <span className={cn("text-xl font-bold tracking-tight transition-colors", logoColor)}>
               Prime Spread
             </span>
