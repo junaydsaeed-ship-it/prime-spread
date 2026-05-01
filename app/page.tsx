@@ -176,7 +176,7 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none">
           <EtherealShadow
             color="rgba(163, 81, 57, 0.55)"
-            animation={{ scale: 60, speed: 30 }}
+            animation={{ scale: 70, speed: 65 }}
             noise={{ opacity: 0.4, scale: 1.5 }}
             sizing="fill"
           />
