@@ -175,9 +175,9 @@ export default function Home() {
       <section className="relative min-h-screen bg-[#1B2632] flex flex-col items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 pointer-events-none">
           <EtherealShadow
-            color="rgba(163, 81, 57, 0.55)"
-            animation={{ scale: 70, speed: 65 }}
-            noise={{ opacity: 0.4, scale: 1.5 }}
+            color="rgba(163, 81, 57, 1)"
+            animation={{ scale: 100, speed: 90 }}
+            noise={{ opacity: 1, scale: 1.2 }}
             sizing="fill"
           />
         </div>
