@@ -131,9 +131,10 @@ export function Component({
                                     in="undulation"
                                     type="hueRotate"
                                     values="180"
+                                    result="hueRotated"
                                 />
                                 <feColorMatrix
-                                    in="dist"
+                                    in="hueRotated"
                                     result="circulation"
                                     type="matrix"
                                     values="4 0 0 0 1  4 0 0 0 1  4 0 0 0 1  1 0 0 0 0"
