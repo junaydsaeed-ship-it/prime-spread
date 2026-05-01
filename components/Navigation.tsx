@@ -16,6 +16,42 @@ const links = [
   { href: "/contact", label: "Contact" },
 ]
 
+const PillNav = ({ isHome, pathname }: { isHome: boolean; pathname: string }) => (
+  <div className={cn(
+    "flex items-center gap-1 rounded-full px-1.5 py-1.5 ring-1 backdrop-blur",
+    isHome ? "bg-white/5 ring-white/10" : "bg-[#1B2632]/6 ring-[#1B2632]/12"
+  )}>
+    {links.map((link) => (
+      <Link
+        key={link.href}
+        href={link.href}
+        className={cn(
+          "px-5 py-2.5 text-base font-medium rounded-full transition-colors",
+          isHome
+            ? pathname === link.href ? "text-white" : "text-white/70 hover:text-white"
+            : pathname === link.href ? "text-[#1B2632]" : "text-[#1B2632]/60 hover:text-[#1B2632]"
+        )}
+      >
+        {link.label}
+      </Link>
+    ))}
+    <Link
+      href="/contact"
+      className={cn(
+        "ml-1 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-medium transition-colors",
+        isHome
+          ? "bg-white text-neutral-900 hover:bg-white/90"
+          : "bg-[#1B2632] text-[#EEE9DF] hover:bg-[#1B2632]/85"
+      )}
+    >
+      Work With Us
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 7h10v10" /><path d="M7 17 17 7" />
+      </svg>
+    </Link>
+  </div>
+)
+
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -23,7 +59,7 @@ export default function Navigation() {
   const isHome = pathname === "/"
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
+    const handleScroll = () => setScrolled(window.scrollY > 80)
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -32,76 +68,65 @@ export default function Navigation() {
     setMobileOpen(false)
   }, [pathname])
 
-  const navBg = isHome
-    ? scrolled
-      ? "bg-[#1B2632]/95 backdrop-blur-md shadow-lg"
-      : "bg-transparent"
-    : "bg-[#EEE9DF]/95 backdrop-blur-md shadow-sm border-b border-[#C9C1B1]/40"
-
   const textColor = isHome && !scrolled ? "text-[#EEE9DF]" : isHome ? "text-[#EEE9DF]" : "text-[#1B2632]"
-  const logoColor = isHome && !scrolled ? "text-[#FFB162]" : isHome ? "text-[#FFB162]" : "text-[#A35139]"
 
   return (
     <>
-      <nav className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", navBg)}>
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 group">
-            <Image
-              src="/prime-spread-logo.svg"
-              alt="Prime Spread"
-              width={36}
-              height={36}
-              className="shrink-0"
-              priority
-            />
-            <span className={cn("text-xl font-bold tracking-tight transition-colors", logoColor)}>
-              Prime Spread
-            </span>
-          </Link>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  "text-sm font-medium transition-colors relative",
-                  textColor,
-                  pathname === link.href
-                    ? "opacity-100"
-                    : "opacity-70 hover:opacity-100"
-                )}
-              >
-                {link.label}
-                {pathname === link.href && (
-                  <motion.span
-                    layoutId="nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-[#FFB162] rounded-full"
-                  />
-                )}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="hidden md:block">
-            <Button asChild variant={isHome ? "default" : "default"} size="sm">
-              <Link href="/contact">Work With Us</Link>
-            </Button>
-          </div>
-
-          {/* Mobile toggle */}
-          <button
-            className={cn("md:hidden p-2 rounded-md transition-colors", textColor)}
-            onClick={() => setMobileOpen(!mobileOpen)}
-            aria-label="Toggle menu"
+      {/* Top banner — logo + right-aligned pill, fades out on scroll */}
+      <AnimatePresence>
+        {!scrolled && (
+          <motion.nav
+            key="banner"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="fixed top-0 left-0 right-0 z-50"
+            style={{ minHeight: 144 }}
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
-        </div>
-      </nav>
+            <Link href="/" style={{ left: 72, top: 32 }} className="absolute flex items-center group">
+              <Image
+                src="/prime-spread-logo.svg"
+                alt="Prime Spread"
+                width={96}
+                height={96}
+                className="shrink-0"
+                priority
+              />
+            </Link>
+
+            <div className="hidden md:flex absolute" style={{ top: 58, right: 48 }}>
+              <PillNav isHome={isHome} pathname={pathname} />
+            </div>
+
+            <div className="flex md:hidden justify-end pt-5 pr-6">
+              <button
+                className={cn("p-2 rounded-md transition-colors", textColor)}
+                onClick={() => setMobileOpen(!mobileOpen)}
+                aria-label="Toggle menu"
+              >
+                {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              </button>
+            </div>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+
+      {/* Scrolled pill — centred at top, fades in */}
+      <AnimatePresence>
+        {scrolled && (
+          <motion.div
+            key="scrolled-pill"
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="fixed top-5 left-1/2 z-50 hidden md:flex -translate-x-1/2"
+          >
+            <PillNav isHome={isHome} pathname={pathname} />
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Menu */}
       <AnimatePresence>
