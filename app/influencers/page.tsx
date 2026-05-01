@@ -68,7 +68,7 @@ const fadeUp = {
 
 export default function InfluencersPage() {
   return (
-    <main className="pt-16">
+    <main className="pt-36">
       {/* Hero */}
       <section className="bg-[#A35139] py-28 px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFB162]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />

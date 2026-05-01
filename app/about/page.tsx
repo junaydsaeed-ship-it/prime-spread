@@ -58,7 +58,7 @@ function AboutContactForm() {
   }
 
   return (
-    <section className="bg-[#EEE9DF] py-24 px-6">
+    <section className="bg-[#EEE9DF] pt-44 pb-24 px-6">
       <div className="max-w-2xl mx-auto">
         <motion.div {...fadeUp} className="text-center mb-10">
           <span className="text-[#A35139] text-sm font-semibold uppercase tracking-widest">Work with us</span>

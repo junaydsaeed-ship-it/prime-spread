@@ -75,6 +75,7 @@ export default function Navigation() {
   }, [pathname])
 
   const textColor = isHome && !scrolled ? "text-[#EEE9DF]" : isHome ? "text-[#EEE9DF]" : "text-[#1B2632]"
+  const navBg = isHome ? "bg-transparent" : "bg-[#EEE9DF]/95 backdrop-blur-md shadow-sm border-b border-[#C9C1B1]/40"
 
   return (
     <>
@@ -87,7 +88,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className="fixed top-0 left-0 right-0 z-50"
+            className={cn("fixed top-0 left-0 right-0 z-50", navBg)}
             style={{ minHeight: 144 }}
           >
             <Link href="/" style={{ left: 72, top: 32 }} className="absolute flex items-center group">

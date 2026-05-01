@@ -76,7 +76,7 @@ const fadeUp = {
 
 export default function ServicesPage() {
   return (
-    <main className="pt-16">
+    <main className="pt-36">
       {/* Hero */}
       <section className="bg-[#1B2632] py-28 px-6">
         <div className="max-w-4xl mx-auto text-center">
