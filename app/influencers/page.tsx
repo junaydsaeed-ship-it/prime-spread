@@ -68,9 +68,9 @@ const fadeUp = {
 
 export default function InfluencersPage() {
   return (
-    <main className="pt-36">
+    <main>
       {/* Hero */}
-      <section className="bg-[#A35139] py-28 px-6 relative overflow-hidden">
+      <section className="bg-[#A35139] pt-44 pb-28 px-6 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFB162]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <motion.div {...fadeUp}>

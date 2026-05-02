@@ -33,9 +33,9 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="pt-36">
+    <main>
       {/* Hero */}
-      <section className="bg-[#1B2632] py-24 px-6">
+      <section className="bg-[#1B2632] pt-44 pb-24 px-6">
         <div className="max-w-3xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <span className="text-[#FFB162] text-sm font-semibold uppercase tracking-widest">

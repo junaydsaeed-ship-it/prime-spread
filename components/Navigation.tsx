@@ -16,12 +16,10 @@ const links = [
   { href: "/contact", label: "Contact" },
 ]
 
-const PillNav = ({ isHome, pathname, floating = false }: { isHome: boolean; pathname: string; floating?: boolean }) => (
+const PillNav = ({ pathname, floating = false }: { isHome: boolean; pathname: string; floating?: boolean }) => (
   <div className={cn(
     "flex items-center gap-1 rounded-full px-1.5 py-1.5 ring-1 backdrop-blur-md",
-    floating
-      ? "bg-[#1B2632]/90 ring-white/10"
-      : isHome ? "bg-white/5 ring-white/10" : "bg-[#1B2632]/6 ring-[#1B2632]/12"
+    floating ? "bg-[#1B2632]/90 ring-white/10" : "bg-white/5 ring-white/10"
   )}>
     {links.map((link) => (
       <Link
@@ -29,11 +27,7 @@ const PillNav = ({ isHome, pathname, floating = false }: { isHome: boolean; path
         href={link.href}
         className={cn(
           "px-5 py-2.5 text-base font-medium rounded-full transition-colors",
-          floating
-            ? pathname === link.href ? "text-white" : "text-[#EEE9DF]/70 hover:text-white"
-            : isHome
-              ? pathname === link.href ? "text-white" : "text-white/70 hover:text-white"
-              : pathname === link.href ? "text-[#1B2632]" : "text-[#1B2632]/60 hover:text-[#1B2632]"
+          pathname === link.href ? "text-white" : "text-white/70 hover:text-white"
         )}
       >
         {link.label}
@@ -41,14 +35,7 @@ const PillNav = ({ isHome, pathname, floating = false }: { isHome: boolean; path
     ))}
     <Link
       href="/contact"
-      className={cn(
-        "ml-1 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-medium transition-colors",
-        floating
-          ? "bg-white text-neutral-900 hover:bg-white/90"
-          : isHome
-            ? "bg-white text-neutral-900 hover:bg-white/90"
-            : "bg-[#1B2632] text-[#EEE9DF] hover:bg-[#1B2632]/85"
-      )}
+      className="ml-1 inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-base font-medium transition-colors bg-white text-neutral-900 hover:bg-white/90"
     >
       Work With Us
       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -75,7 +62,6 @@ export default function Navigation() {
   }, [pathname])
 
   const textColor = isHome && !scrolled ? "text-[#EEE9DF]" : isHome ? "text-[#EEE9DF]" : "text-[#1B2632]"
-  const navBg = isHome ? "bg-transparent" : "bg-[#EEE9DF]/95 backdrop-blur-md shadow-sm border-b border-[#C9C1B1]/40"
 
   return (
     <>
@@ -88,7 +74,7 @@ export default function Navigation() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35, ease: "easeInOut" }}
-            className={cn("fixed top-0 left-0 right-0 z-50", navBg)}
+            className="fixed top-0 left-0 right-0 z-50"
             style={{ minHeight: 144 }}
           >
             <Link href="/" style={{ left: 72, top: 32 }} className="absolute flex items-center group">
