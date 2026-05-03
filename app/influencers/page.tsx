@@ -129,33 +129,6 @@ export default function InfluencersPage() {
         </div>
       </section>
 
-      {/* Niches */}
-      <section className="py-24 px-6 bg-[#1B2632]">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div {...fadeUp}>
-            <span className="text-[#FFB162] text-sm font-semibold uppercase tracking-widest">Who we work with</span>
-            <h2 className="mt-3 text-4xl font-bold text-[#EEE9DF]">We cover every corner of food content.</h2>
-            <p className="mt-4 text-[#C9C1B1] max-w-xl mx-auto">
-              Our brand partners are looking for creators across all food niches. If it&apos;s food-related, there&apos;s probably a brand waiting to work with you.
-            </p>
-          </motion.div>
-          <div className="flex flex-wrap justify-center gap-3 mt-10">
-            {niches.map((niche, i) => (
-              <motion.span
-                key={niche}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.3, delay: i * 0.06 }}
-                className="bg-[#2C3B4D] border border-[#EEE9DF]/10 text-[#EEE9DF] text-sm font-medium px-5 py-2.5 rounded-full"
-              >
-                {niche}
-              </motion.span>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* How it works for creators */}
       <section className="py-24 px-6 bg-[#EEE9DF]">
         <div className="max-w-5xl mx-auto">
