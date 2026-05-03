@@ -87,11 +87,6 @@ function HomeContactForm() {
             Tell us about your brand or your channel. We&apos;ll find the right fit and
             make something worth sharing.
           </p>
-          <div className="mt-8 space-y-3 text-sm text-[#C9C1B1]">
-            <div>📧 hello@primespread.co.uk</div>
-            <div>📞 +44 (0)20 7123 4567</div>
-            <div>📍 London, United Kingdom</div>
-          </div>
         </motion.div>
 
         <motion.div

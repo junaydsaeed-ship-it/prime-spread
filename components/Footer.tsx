@@ -21,14 +21,8 @@ export default function Footer() {
           {/* Contact + email signup */}
           <div>
             <h4 className="font-semibold text-sm uppercase tracking-widest text-[#C9C1B1] mb-4">Contact</h4>
-            <a
-              href="mailto:hello@saeora.co.uk"
-              className="text-[#EEE9DF] hover:text-[#FFB162] transition-colors text-sm"
-            >
-              hello@saeora.co.uk
-            </a>
 
-            <div className="mt-6">
+            <div className="mt-0">
               {submitted ? (
                 <p className="text-[#FFB162] text-sm">Thanks — we&apos;ll be in touch.</p>
               ) : (
