@@ -21,7 +21,7 @@ const services = [
       "Content review & approval workflow",
       "Post-campaign analytics & reporting",
     ],
-    img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=700&h=500&fit=crop",
+    img: "/brand-analytics.jpg",
     accent: "#FFB162",
   },
   {
@@ -38,7 +38,7 @@ const services = [
       "Ongoing brand relationship management",
       "Payment tracking & follow-up",
     ],
-    img: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=700&h=500&fit=crop",
+    img: "/creative-strategy.jpg",
     accent: "#A35139",
   },
   {

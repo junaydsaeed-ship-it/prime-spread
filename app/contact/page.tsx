@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react"
+import { Mail, Send, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Footer from "@/components/Footer"
 
@@ -63,9 +63,6 @@ export default function ContactPage() {
           >
             <div>
               <h2 className="text-2xl font-bold text-[#1B2632]">Contact details</h2>
-              <p className="mt-2 text-[#2C3B4D]/60 text-sm leading-relaxed">
-                We typically respond within one business day.
-              </p>
             </div>
 
             <div className="space-y-6">
@@ -76,44 +73,17 @@ export default function ContactPage() {
                 <div>
                   <div className="text-xs text-[#2C3B4D]/50 font-semibold uppercase tracking-widest mb-1">Email</div>
                   <a
-                    href="mailto:hello@primespread.co.uk"
+                    href="mailto:hello@saeora.co.uk"
                     className="text-[#1B2632] font-medium hover:text-[#A35139] transition-colors"
                   >
-                    hello@primespread.co.uk
+                    hello@saeora.co.uk
                   </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-[#FFB162]/20 flex items-center justify-center shrink-0">
-                  <Phone size={18} className="text-[#A35139]" />
-                </div>
-                <div>
-                  <div className="text-xs text-[#2C3B4D]/50 font-semibold uppercase tracking-widest mb-1">Phone</div>
-                  <a
-                    href="tel:+442071234567"
-                    className="text-[#1B2632] font-medium hover:text-[#A35139] transition-colors"
-                  >
-                    +44 (0)20 7123 4567
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex gap-4 items-start">
-                <div className="w-10 h-10 rounded-xl bg-[#FFB162]/20 flex items-center justify-center shrink-0">
-                  <MapPin size={18} className="text-[#A35139]" />
-                </div>
-                <div>
-                  <div className="text-xs text-[#2C3B4D]/50 font-semibold uppercase tracking-widest mb-1">Location</div>
-                  <p className="text-[#1B2632] font-medium">London, United Kingdom</p>
                 </div>
               </div>
             </div>
 
             <div className="bg-[#2C3B4D] rounded-2xl p-6 text-[#EEE9DF]">
-              <p className="font-semibold mb-1">Office hours</p>
-              <p className="text-[#C9C1B1] text-sm">Monday – Friday, 9am – 6pm GMT</p>
-              <p className="text-[#C9C1B1] text-sm mt-1">We aim to reply to all enquiries within 24 hours.</p>
+              <p className="text-[#C9C1B1] text-sm">We aim to reply to all inquiries within 24 hours.</p>
             </div>
           </motion.div>
 

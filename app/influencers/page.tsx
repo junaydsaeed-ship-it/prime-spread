@@ -30,32 +30,36 @@ const benefits = [
 ]
 
 const niches = [
-  "Recipe & cooking content",
-  "Kitchen appliance reviews",
-  "Meal prep & healthy eating",
-  "Baking & patisserie",
-  "Street food & dining out",
-  "Specialty ingredients & global cuisine",
-  "Sustainable & plant-based food",
-  "Food photography & styling",
+  "Home cooking & everyday meals",
+  "Kitchen appliance demos",
+  "Meal prep & batch cooking",
+  "Family-friendly recipes",
+  "Quick weeknight dinners",
+  "Budget cooking & money-saving meals",
+  "Comfort food & baking",
+  "Healthy home cooking",
 ]
 
 const faqs = [
   {
-    q: "What follower count do I need to work with Saeora?",
-    a: "We work with creators from 5k followers upwards. Engagement rate and niche relevance matter far more to us than raw numbers — a highly engaged 15k food account is often more valuable to a brand than a disengaged 200k generalist.",
+    q: "Who do we work with?",
+    a: "We partner with food brands and food influencers looking to grow.",
+  },
+  {
+    q: "How do campaigns start?",
+    a: "We define your goals to match with creators who fit your brand.",
+  },
+  {
+    q: "How long do campaigns take?",
+    a: "Campaigns typically launch within a few weeks after planning.",
+  },
+  {
+    q: "Can I manage campaigns myself?",
+    a: "We handle campaign management end to end for smooth execution.",
   },
   {
     q: "Do I have to pay anything to join your creator network?",
     a: "Never. We operate on a commission basis from the brand side. You pay nothing to be in our network, and we only earn when you earn.",
-  },
-  {
-    q: "Will I still have creative control?",
-    a: "Absolutely. We built the agency specifically to protect creator voices. We vet briefs before they reach you, and if a brand tries to over-prescribe the content, we push back on your behalf.",
-  },
-  {
-    q: "What platforms do you work across?",
-    a: "Primarily Instagram, TikTok, and YouTube — but we also work across Pinterest and food-specific blogs. If you have a strong presence on another platform, tell us and we&apos;ll factor it in.",
   },
 ]
 
@@ -194,8 +198,8 @@ export default function InfluencersPage() {
               className="rounded-2xl overflow-hidden shadow-xl aspect-[3/4]"
             >
               <img
-                src="https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=600&h=800&fit=crop"
-                alt="Camera and filming equipment"
+                src="/food-creators.jpg"
+                alt="Food creator filming a cooking video"
                 className="w-full h-full object-cover"
               />
             </motion.div>
