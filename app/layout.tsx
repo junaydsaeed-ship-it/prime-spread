@@ -10,7 +10,7 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: "Prime Spread — Food & Influencer Marketing Agency",
+  title: "Saeora — Food & Influencer Marketing Agency",
   description:
     "London-based influencer marketing agency connecting food and cooking influencers with kitchen appliance brands and food companies.",
 }

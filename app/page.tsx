@@ -209,7 +209,7 @@ export default function Home() {
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-[#C9C1B1] max-w-2xl mx-auto leading-relaxed">
-            Prime Spread connects kitchen appliance brands and food companies with the creators
+            Saeora connects kitchen appliance brands and food companies with the creators
             their audience already loves — building campaigns that feel real, perform brilliantly,
             and last.
           </p>

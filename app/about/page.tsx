@@ -152,7 +152,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center">
           <motion.div {...fadeUp}>
             <span className="text-[#FFB162] text-sm font-semibold uppercase tracking-widest">
-              About Prime Spread
+              About Saeora
             </span>
             <h1 className="mt-4 text-5xl md:text-6xl font-bold text-[#EEE9DF] leading-tight">
               Built for the food world,<br />by people who love it.
@@ -172,7 +172,7 @@ export default function AboutPage() {
             <span className="text-[#A35139] text-sm font-semibold uppercase tracking-widest">What we do</span>
             <h2 className="mt-3 text-4xl font-bold text-[#1B2632]">We work on both sides of the table.</h2>
             <p className="mt-4 text-[#2C3B4D]/65 max-w-xl mx-auto">
-              Prime Spread exists to bridge the gap between food brands that want genuine reach
+              Saeora exists to bridge the gap between food brands that want genuine reach
               and creators who want partnerships that respect their voice.
             </p>
           </motion.div>

@@ -79,8 +79,8 @@ export default function Navigation() {
           >
             <Link href="/" style={{ left: 72, top: 32 }} className="absolute flex items-center group">
               <Image
-                src="/prime-spread-logo.svg"
-                alt="Prime Spread"
+                src="/saeora-logo.svg"
+                alt="Saeora"
                 width={96}
                 height={96}
                 className="shrink-0"

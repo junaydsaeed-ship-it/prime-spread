@@ -42,7 +42,7 @@ const niches = [
 
 const faqs = [
   {
-    q: "What follower count do I need to work with Prime Spread?",
+    q: "What follower count do I need to work with Saeora?",
     a: "We work with creators from 5k followers upwards. Engagement rate and niche relevance matter far more to us than raw numbers — a highly engaged 15k food account is often more valuable to a brand than a disengaged 200k generalist.",
   },
   {
@@ -81,7 +81,7 @@ export default function InfluencersPage() {
               Turn your passion<br />into a pay cheque.
             </h1>
             <p className="mt-6 text-[#EEE9DF]/80 text-lg max-w-2xl mx-auto leading-relaxed">
-              Join Prime Spread&apos;s creator network and get matched with kitchen and food brands
+              Join Saeora&apos;s creator network and get matched with kitchen and food brands
               that genuinely fit your content — while we handle all the business side.
             </p>
             <Button asChild size="lg" variant="outlineLight" className="mt-8">

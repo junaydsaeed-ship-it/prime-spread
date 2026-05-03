@@ -10,13 +10,13 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <Image
-                src="/prime-spread-logo.svg"
-                alt="Prime Spread"
+                src="/saeora-logo.svg"
+                alt="Saeora"
                 width={48}
                 height={48}
                 className="shrink-0"
               />
-              <span className="text-2xl font-bold text-[#FFB162]">Prime Spread</span>
+              <span className="text-2xl font-bold text-[#FFB162]">Saeora</span>
             </div>
             <p className="mt-4 text-[#C9C1B1] text-sm leading-relaxed max-w-xs">
               London&apos;s go-to influencer marketing agency for food brands and cooking creators.
@@ -72,7 +72,7 @@ export default function Footer() {
 
         <div className="border-t border-[#2C3B4D] mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-[#C9C1B1] text-xs">
-            © {new Date().getFullYear()} Prime Spread Ltd. All rights reserved.
+            © {new Date().getFullYear()} Saeora Ltd. All rights reserved.
           </p>
           <p className="text-[#C9C1B1] text-xs">Based in London, working globally.</p>
         </div>
