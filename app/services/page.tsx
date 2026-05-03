@@ -60,13 +60,6 @@ const services = [
   },
 ]
 
-const process = [
-  { step: "01", title: "Discovery call", desc: "We learn your goals, audience, and what success looks like for you." },
-  { step: "02", title: "Strategy", desc: "We build a tailored plan — creators, formats, timeline, and KPIs." },
-  { step: "03", title: "Execution", desc: "We manage everything: outreach, briefs, content review, and go-live." },
-  { step: "04", title: "Results", desc: "You get a clear report on reach, engagement, and what we'd do next." },
-]
-
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
@@ -145,35 +138,6 @@ export default function ServicesPage() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="py-24 px-6 bg-[#2C3B4D]">
-        <div className="max-w-5xl mx-auto">
-          <motion.div {...fadeUp} className="text-center mb-16">
-            <span className="text-[#FFB162] text-sm font-semibold uppercase tracking-widest">How it works</span>
-            <h2 className="mt-3 text-4xl font-bold text-[#EEE9DF]">Simple process, serious results.</h2>
-          </motion.div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
-            {process.map((p, i) => (
-              <motion.div
-                key={p.step}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative"
-              >
-                <div className="text-5xl font-black text-[#FFB162]/20 mb-3">{p.step}</div>
-                <h3 className="font-bold text-[#EEE9DF] text-lg mb-2">{p.title}</h3>
-                <p className="text-[#C9C1B1] text-sm leading-relaxed">{p.desc}</p>
-                {i < process.length - 1 && (
-                  <div className="hidden md:block absolute top-6 -right-4 text-[#FFB162]/30 text-2xl">→</div>
-                )}
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
